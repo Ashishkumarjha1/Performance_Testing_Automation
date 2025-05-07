@@ -133,7 +133,7 @@ class ConfigureChannel:
                 cursor.execute(fetch_query, (self.test_suit_name,))
                 test_case_names = cursor.fetchall()
                 print(test_case_names)
-                print("***************************************************")
+                
                 # Concatenate all test_case_names into a single string
                 test_case_list_str = ','.join(
                     [test_case_name[0] for test_case_name in test_case_names])
