@@ -227,18 +227,7 @@ class AlarmSystemDatabase:
 
         print("Record inserted successfully into test_case table")
 
-    # def read_testrun_from_excel(self, file_path, sheet_name):
-    #     workbook = load_workbook(file_path)
-    #     sheet = workbook[sheet_name]
-    #     # Iterate through the rows starting from the second row
-    #     for row in sheet.iter_rows(min_row=2, values_only=True, min_col=2, max_col=8):
-    #         # Capture data from each row
-    #         if all(cell is None for cell in row):
-    #             continue
-    #         # print(row)
-    #         # Insert the records into the test_run table
-    #         self.insert_into_test_run(row)
-    #     print("Record inserted successfully into test_run table")
+   
 
 
 def main():

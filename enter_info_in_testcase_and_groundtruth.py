@@ -18,7 +18,6 @@ class AlarmSystemDatabase:
         self.list_of_channels_groundtruth_table = []
 
     def load_config(self):
-        print("((((()))))")
         print(self.config_path)
         with open(self.config_path, 'r') as file:
             config = json.load(file)
@@ -48,7 +47,7 @@ class AlarmSystemDatabase:
 
     def execute_sql_file(self, file_path):
         try:
-            print("hiiiiiiiii")
+            
             config = self.load_config()
             print(config)
             # Establishing a connection to the database
@@ -160,7 +159,7 @@ class AlarmSystemDatabase:
         print(sheet_names)
 
         sheet = workbook[sheet_name]
-        print("************************")
+        
 
         channel_name = sheet_name
         # print(f"\nReading from sheet: {sheet_name}")
@@ -195,43 +194,7 @@ class AlarmSystemDatabase:
             except Error as e:
                 print("Error inserting into testcase:", e)
 
-    # def list_of_channels_from_testrun_table(self):
-    #     try:
-    #         cursor = self.connection.cursor()
-    #         # SQL query to retrieve channels from the testcase table
-    #         query = "SELECT TestCaseList FROM test_run"
-    #         cursor.execute(query)
-
-    #         # Fetch all rows from the query
-    #         results = cursor.fetchall()
-
-    #         # Extract channels from the results and store them in self.testcase_channel_list_from_testrun
-    #         self.testcase_channel_list_from_testrun = [
-    #             row[0] for row in results]
-    #     except mysql.connector.Error as err:
-    #         print(f"Error: {err}")
-    #         self.testcase_channel_list_from_testrun = []
-
-    # def insert_into_test_run(self, data):
-    #     if (data[3] not in self.testcase_channel_list_from_testrun):
-    #         try:
-    #             cursor = self.connection.cursor()
-    #             insert_query = """
-    #                 INSERT INTO test_run (
-    #                     Description, TestRunName, software_version,
-    #                     TestCaseList, test_date, tester_name, TestRunBaseURL
-    #                 ) VALUES (%s, %s, %s, %s, %s, %s, %s)
-    #             """
-    #             cursor.execute(insert_query, data)
-    #             self.connection.commit()
-    #             # print(cursor.rowcount,
-    #             #       "Record inserted successfully into test_run table")
-
-    #             # Get the ID of the last inserted record
-    #             return cursor.lastrowid
-    #         except Error as e:
-    #             print("Error inserting into test_run:", e)
-    #             return None
+   
 
     def read_testcase_from_excel(self, file_path, sheet_name):
         # Load the workbook and select the sheet
@@ -262,18 +225,7 @@ class AlarmSystemDatabase:
 
         print("Record inserted successfully into test_case table")
 
-    # def read_testrun_from_excel(self, file_path, sheet_name):
-    #     workbook = load_workbook(file_path)
-    #     sheet = workbook[sheet_name]
-    #     # Iterate through the rows starting from the second row
-    #     for row in sheet.iter_rows(min_row=2, values_only=True, min_col=2, max_col=8):
-    #         # Capture data from each row
-    #         if all(cell is None for cell in row):
-    #             continue
-    #         # print(row)
-    #         # Insert the records into the test_run table
-    #         self.insert_into_test_run(row)
-    #     print("Record inserted successfully into test_run table")
+   
 
 
 def main():

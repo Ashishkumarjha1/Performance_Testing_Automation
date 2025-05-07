@@ -80,18 +80,7 @@ class ConfigureChannel:
             config = json.load(file)
         return config
 
-    # def read_login_details(self):
-    #     # Load the Excel workbook
-    #     workbook = openpyxl.load_workbook(self.file_path)
-
-    #     # Select the sheet named "Logindetails"
-    #     sheet = workbook["Logindetails"]
-
-    #     # Read the IP address, port, username, and password from the specified cells
-    #     self.ip_address = sheet.cell(row=2, column=1).value
-    #     self.port = sheet.cell(row=2, column=2).value
-    #     self.username = sheet.cell(row=2, column=3).value
-    #     self.password = sheet.cell(row=2, column=4).value
+    
 
     def login_to_config_service(self):
         base_url = f"http://{self.ip_address}:{self.port}"
@@ -235,8 +224,8 @@ class ConfigureChannel:
                 # Commit the transaction
                 self.connection.commit()
 
-            print("***********")
-            print(result)
+            
+            
             # cursor.close()
 
             today = datetime.today()
@@ -371,7 +360,7 @@ class ConfigureChannel:
                 # Split the string by comma and extend the all_names list
                 all_names.extend(item.split(','))
         print(all_names)
-        print("**********************************************************************!@")
+        
         threads = []
         for camera in list_of_cameras:
             if camera[1] in all_names:

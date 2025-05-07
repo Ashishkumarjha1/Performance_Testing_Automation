@@ -162,10 +162,7 @@ class OutputDatabase:
                     (run_id, name)
                 )
 
-        # Print the list of tuples containing test_run_id, id, and channel_name
-        # print("List of tuples (test_run_id, id, channel_name):")
-        # for item in test_run_id_channel_name_list:
-        #     print(item)
+      
 
         for item in test_run_id_channel_name_list:
             run_id, channel_name = item
