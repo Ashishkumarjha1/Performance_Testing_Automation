@@ -1,0 +1,11 @@
+{
+    "ip_address": "localhost",
+    "port": "9001",
+    "username": "ashish@ashish.com",
+    "password": "Vision@123",
+    "description": "a",
+    "test_run_name": "a",
+    "software_version": "2",
+    "tester_name": "3",
+    "test_suit_name": "Sanity test"
+}
